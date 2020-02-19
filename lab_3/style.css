@@ -14,12 +14,13 @@ body {
   width: 70%;
   min-width: 800px;
   margin: 0 auto;
+  background-color: rgb(136, 179, 194);
 }
 
 /* || typography */
 
 h1, h2, h3 {
-  font-family: 'Cinzel Decorative', cursive;
+  font-family: 'Lemonada', cursive;
   color: #2a2a2a;
 }
 
@@ -32,11 +33,16 @@ h1 {
   font-size: 4rem;
   text-align: center;
   text-shadow: 2px 2px 10px black;
+  
 }
+ h1{
+   font-weight: bolder;
+ }
 
 h2 {
   font-size: 3rem;
   text-align: center;
+  font-weight: lighter;
 }
 
 h3 {
@@ -57,7 +63,6 @@ header {
 }
 
 body > * {
-  background-color: red;
   padding: 1%;
 }
 
@@ -113,6 +118,11 @@ main {
   display: flex;
 }
 
+img {
+  width: 100px;
+  height: 100px;
+}
+
 article, section {
   flex: 4;
 }
@@ -127,6 +137,7 @@ aside a {
   display: block;
   float: left;
   width: 50%;
+  
 }
 
 aside img {
