@@ -43,7 +43,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    margin: 0;
+    margin: auto;
     margin-bottom: 15px;
     padding: 15px; 
 }
@@ -52,7 +52,8 @@ h1 {
     display: flex;
     object-fit: cover;
     justify-content: flex-end;
-    padding-top: 20.15px;
+    width: 200px;
+    height: 200px;
   }
 
 .image{
