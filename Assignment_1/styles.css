@@ -1,0 +1,111 @@
+h2 {
+    font-size: 30px;
+    font-family: 'Overlock';
+    font-weight: 800;
+}
+
+
+@media screen and {max-width: 1000px}
+  
+
+header {
+    display: flex;
+    background-color: #1F456B;
+    color : #8CBDEE;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 15px; 
+}
+
+.logo {
+    display: block;
+    justify-content: flex-end;
+    width: 100px;
+    height: 60px;
+    padding-top: 20.15px;
+  }
+
+.image{
+    width: inherit;
+    border-radius: 4px;
+    border: solid 1px khaki;
+}
+
+.wrapper {
+  margin-right: auto; 
+  margin-left:  auto; 
+  max-width: 960px; 
+  padding-right: 10px; 
+  padding-left:  10px; 
+}
+
+.container {
+    max-width: 960px;
+    min-height: 100px;
+}
+
+.firstbox {
+    background: lavender;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0.1 auto;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.secondbox{
+    flex: 0.2 auto;
+    border-radius: 4px;
+    background: lavender;
+    padding: 15px;
+    border: solid 1px #4B36EB;
+}
+
+.jobtitle{
+    font-family: serif;
+    font-weight:bolder;
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: 2px;
+    letter-spacing: 0.02rem;
+}
+
+div {
+    display: block;
+}
+
+body { 
+    margin: 0px;
+    padding: 0px;
+    font-family: serif;
+    background-color:#E6BAE8;
+}
+.jobdesc{
+    text-indent: 10px;
+    font-family: serif;
+    font-style: regular;
+    font-size: 17px;
+    margin-bottom: 2px;
+}
+ul.responsibilities {
+    margin-bottom: 10px;
+}
+
+li{
+    text-align: inherit;
+    
+}
+ol{
+    list-style-type: decimal ;
+    
+}
+ul{
+    list-style-type: circle;
+}
