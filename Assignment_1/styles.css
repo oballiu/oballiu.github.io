@@ -1,9 +1,4 @@
-h2 {
-    font-size: 30px;
-    font-family: 'Overlock';
-    font-weight: 800;
-    text-align: left;
-}
+
 
 h1 {
     font-family: 'Overlock';
@@ -25,13 +20,15 @@ h1 {
       0 11px 0 black, 
       0 22px 30px rgba(0, 0, 0, 0.9);
 }
+h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    font-family: 'Overlock';
+    font-weight: 800;
+    text-align: left;
+}
 
-@media screen and  (max-width:1000px) {
-    .container {
-        justify-content: center;
-      /* max-width: 1000px; */
-    }
-  }
   
 
 .header {
@@ -55,11 +52,11 @@ h1 {
   }
 
 .resumeimage{
-    /* display: flex; */
-     width: inherit; 
+    display: flex;
+    width: inherit; 
     border-radius: 4px;
     border: solid 1px #6DA3EE;
-    justify-content: space-between; 
+    /* justify-content: space-between;  */
     align-items: center;
 }
 
@@ -70,47 +67,44 @@ img {
 
 .wrapper {
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
-     justify-content: center;
-  /* text-align: center; */
-  margin-right: auto; 
-  margin-left:  auto;  */
+    justify-content: center;
+     margin-right: auto; 
+    margin-left:  auto;  
 }
 
 .container {
     display: flex;
-    /* flex-flow: row wrap; */
+    
     flex-direction: row;
-    /* justify-content:space-between; */
+    justify-content:space-between;
     flex-wrap: wrap;  
-    /* max-width: 960px; */
-    /* min-height: 100%; */
-    /* align-items: flex-start; */
-
+    align-items:flex-start;
 }
 
+
+
 .firstbox {
-    /* background: lavender; */
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* flex-wrap: wrap; */
-    /* flex: 0.1 auto; */
-    /* justify-content: space-evenly; */
+    flex: 0.1 auto;
+    justify-content: space-evenly;
     align-items: center;
     margin: 0;
+    margin-right: 15px;
     margin-bottom: 15px;
-    /* flex: 0.2 auto; */
-
 } 
 
+
 .firstbox p{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     text-align: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 p {
+    border-radius: 4px;
     background-color: lavender;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -120,12 +114,12 @@ p {
 .secondbox{
     flex-direction: row;
     flex-wrap: wrap;
-    flex: 0.2 auto;
     border-radius: 4px;
     background: lavender;
     padding: 15px;
     border: solid 1px #6DA3EE;
     margin-left: 30px;
+    margin-right: 30px;
 }
 
 .jobtitle{
@@ -161,14 +155,18 @@ ul.responsibilities {
     margin-bottom: 15px;
 }
 
-li{
-    text-align: left;
-    
-}
 ol{
     list-style-type: decimal ;
+}
+@media screen and  (max-width:1000px) {
+    .container {
+        justify-content: center;
+    }
+    .firstbox {
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
     
-}
-ul{
-    list-style-type: circle;
-}
+  }
