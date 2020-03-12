@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+≠<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Test JSON page</title>
@@ -265,47 +265,46 @@
       console.log("List of countries in the world", countries);
     </script>
     <script>
-    
       //creates a list of the countries
       let countriesArrayLength = countries.length;
-      
+        
+
       function create_List() {
         const orderedList = document.createElement("ol"); //create an ordered list object
         orderedList.className = "countries"; //add class name to the list
-        let content = document.querySelector("content");
+        let content = document.querySelector(".content");
         content.appendChild(orderedList);
-
         for (let i = 0; i < countriesArrayLength; i++) {
           let inputLists = document.createElement("li"); // in an ordered list, add an li element
-          let textNode = document.createTextNode(countries[i]);
-          inputLists.appendChild(textNode);
+          inputLists.appendChild(document.createTextNode(countries[i]));
           orderedList.appendChild(inputLists);
         }
+        return orderedList;
       }
       //selecting 25 countries at random
       let randCountries = [];
       function select_Random() {
-        for (let i = 0; i < 26; i++) {
-          let indx = Math.floor(Math.random() * countries.length);
-          randCountries.push(countries[indx]);
+        for (let i = 0; i < 25; i++) {
+          let indx = countries[Math.floor(Math.random() * countries.length)];
+          randCountries.push(indx);
           let unselectedCountries = countries.splice(indx, 1);
           console.log(unselectedCountries);
         }
-
         //forEach
-      randCountries.forEach(element => {
-        let line = document.createElement("li");
-        let Country_name = element["name"];
-        let Country_code = element["code"].bold();
-        line.innerHTML = code + " " + name;
-        create_List.appendChild(line);
-      });
-      randCountries.appendChild(orderedList);
+        randCountries.forEach(element => {
+          let line = document.createElement("li");
+          let Country_name = element["name"];
+          let Country_code = element["code"].bold();
+          line.innerHTML = code + " " + name;
+          create_List.appendChild(line);
+        });
+        orderedList.appendChild(randCountries);
       }
       //sets the funtion job to the button
       let buttn = document.querySelector("button");
       buttn.addEventListener("click", function() {
         create_List();
+        select_Random();
       });
     </script>
   </body>
