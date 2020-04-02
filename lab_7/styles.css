@@ -20,6 +20,17 @@ h3 {
   color: dimgrey;
 }
 
+#map1 { 
+  width: 640px;
+  height: 480px;
+}
+.popupCustom .leaflet-popup-tip,
+.popupCustom .leaflet-popup-content-wrapper {
+    background: lavenderblush;
+    font-style: italic;
+    color: darkblue;
+    font-family: 'Times New Roman', Times, serif;
+}
 .container {
   position: absolute;
   right: 0;
