@@ -21,12 +21,8 @@ h3 {
 }
 
 #map1 { 
-  
-  display: flex;
   width: 640px;
   height: 480px;
-  
-  justify-content: center; 
 }
 
 .popupCustom .leaflet-popup-tip,
