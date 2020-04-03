@@ -21,9 +21,14 @@ h3 {
 }
 
 #map1 { 
+  
+  display: flex;
   width: 640px;
   height: 480px;
+  
+  justify-content: center; 
 }
+
 .popupCustom .leaflet-popup-tip,
 .popupCustom .leaflet-popup-content-wrapper {
     background: lavenderblush;
@@ -112,3 +117,13 @@ h3 {
   position: relative;
   top: 1px;
 }
+
+/* @media screen and  (max-width:1000px) {
+  .container {
+      justify-content: center;
+        }
+        .content {
+          flex-shrink: 1;
+        }
+} */
+

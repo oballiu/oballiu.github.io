@@ -14,12 +14,8 @@
       integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
       crossorigin=""
     ></script>
-    <!-- <style > 
-    #map1 { 
-      width: 640px;
-      height: 480px;
-    }
-    </style> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
   </head>
 
   <body>
@@ -33,7 +29,8 @@
       </div>
     </div>
     <script>
-        const mymap = L.map('map1').setView([51.505, -0.09], 13);
+      
+        const mymap = L.map('map1').setView([38.7849, 76.8721], 11);
         L.tileLayer(
           'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', 
           {
@@ -46,12 +43,37 @@
             accessToken: "pk.eyJ1Ijoib2JhbGxpdSIsImEiOiJjazhqOW41M3UwZWwwM2Vta2NwOW9qeWNtIn0.R3zyIJloWzllGVdheRCiLg"
           }
         ).addTo(mymap);
+        
         const Eppley = L.marker([38.9936, -76.9452]).addTo(mymap);
         const eppley_popup = "<b>Eppley Recreation Center</b><br>University of Maryland, College Park"
         var customized_popUp= {
           className: 'popupCustom'
         }
         Eppley.bindPopup(eppley_popup,customized_popUp).openPopup();
+        
+        fetch("https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json")
+        .then(response => {
+          console.log(response);
+          return response.json();
+        })
+        .then(data => {
+          console.log(data);
+          //McDonalds Pin
+         const McD_mark = L.marker([38.901794 ,-76.900640 ]).addTo(mymap);
+         const name_place = data[1].name; 
+         McD_mark.bindPopup(name_place,customized_popUp).openPopup();
+         //Subway Pin
+         const Sub_mark = L.marker([38.908236,-76.718150 ]).addTo(mymap);
+          const name_place2 = data[2].name;
+          Sub_mark.bindPopup(name_place2,customized_popUp).openPopup();
+          //High Five DMV Pin
+          const HFive_mark = L.marker([39.107035 ,-76.850402]).addTo(mymap);
+          const name_place3 = data[39].name;
+          HFive_mark.bindPopup(name_place3,customized_popUp).openPopup();
+
+        })  
+        
+
     </script>
   </body>
 </html>
