@@ -59,18 +59,18 @@
         .then(data => {
           console.log(data);
           //McDonalds Pin
-         const McD_mark = L.marker([38.901794 ,-76.900640 ]).addTo(mymap);
-         const name_place = data[1].name; 
-         McD_mark.bindPopup(name_place,customized_popUp).openPopup();
-         //Subway Pin
-         const Sub_mark = L.marker([38.908236,-76.718150 ]).addTo(mymap);
+          const McD_mark = L.marker()
+          .setLatLng(data[1].geocoded_column_1.coordinates.reverse()).addTo(mymap)
+          const name_place = data[1].name;
+          McD_mark.bindPopup(name_place,customized_popUp).openPopup();
+          //Subway Pin 
+          const Sub_mark = L.marker().setLatLng(data[2].geocoded_column_1.coordinates.reverse()).addTo(mymap)
           const name_place2 = data[2].name;
           Sub_mark.bindPopup(name_place2,customized_popUp).openPopup();
-          //High Five DMV Pin
-          const HFive_mark = L.marker([39.107035 ,-76.850402]).addTo(mymap);
+          //HighFive DMV Pin 
+          const HFive_mark = L.marker().setLatLng(data[39].geocoded_column_1.coordinates.reverse()).addTo(mymap)
           const name_place3 = data[39].name;
-          HFive_mark.bindPopup(name_place3,customized_popUp).openPopup();
-
+          HFive_mark.bindPopup(name_place3, customized_popUp).openPopup();
         })  
         
 
