@@ -1,4 +1,4 @@
-
+ 
 function callbackFnDemo(arg1, cb) {
     if(arg1 === x){
         cb = arg1 * 2;
