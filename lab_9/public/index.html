@@ -19,12 +19,12 @@
   </div>
   <script>
     fetch('/api') // Rather than fetching from PG County, we're going to fetch from our own server.
-      .then(res => res.json())
-      .then (res => {
-        console.log(res);
-        return res; 
+      .then(results => results.json())
+      .then (results => {
+        console.log(results);
+        return results; 
       })
-      .then(res => {
+      .then(results => {
         const chart = new CanvasJS.Chart("chartContainer", {
             exportEnabled: true,
             animationEnabled: true,
