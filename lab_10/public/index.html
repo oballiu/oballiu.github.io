@@ -13,13 +13,16 @@
         <div>
           <form class="targetForm" id="labForm">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" />
+            <input type="text" id="name" name="name" /> 
+            <label for="zipcode">Zip Code</label>
+            <input type="number" id="zipcode" name="zip code" /> 
             <label for="interests">Interests</label>
             <textarea id="interests" name="interests" rows="5" cols="33">
                 Default text says what?
             </textarea
             ><br />
             <button id="formBtn">Submit</button>
+            <button id= "reqBtn">Records</button>
           </form>
         </div>
       </div>
@@ -32,14 +35,14 @@
 
         const formToSend = new FormData(target);
 
-        fetch("/api", {
-          method: "POST",
+        fetch("/api", { 
+          method: "PUT", //send a put request
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(Object.fromEntries(formToSend)),
         })
-          .then((data) => data.text()) // note: we didn't send JSON, so there's no JSON to get.
+          .then((data) => data.json()) // note: we didn't send JSON, so there's no JSON to get.
           .then((txtresponse) => {
             console.log(txtresponse);
             btn.setAttribute("disabled", true);
@@ -49,8 +52,41 @@
           });
       }
 
+      function getRequestForm (e) {
+        e.preventDefault();
+
+        const target = document.querySelector('#labForm') // button to submit
+        const recBtn = document.querySelector('#reqBtn') 
+
+        fetch("/api", { 
+          method: "GET", // a get request so we are getting the inputs from the form 
+          headers: {
+            "Content-Type": "application/json",
+          },
+         
+        })
+          .then((data) => data.json()) 
+          .then((txtrecord) => {
+            console.log(txtrecord);
+            recBtn.setAttribute("disabled", true);
+            const orderedList = document.createElement("ol");
+            txtrecord.forEach(element => {
+              let line = document.createElement("li");
+              let Input_name = element["name"];
+              let Input_zip = element["zipcode"];
+              let Input_interests = element["interests"]
+              line.innerHTML = Input_name + " " + Input_zip + " " + Input_interests;
+              orderedList.appendChild(line);
+            });
+            target.append(orderedList);
+          });
+      }
+
+
       const formBtn = document.querySelector("#formBtn");
       formBtn.addEventListener("click", sendForm);
+      const reqBtn = document.querySelector("#reqBtn")
+      reqBtn.addEventListener("click", getRequestForm)
     </script>
   </body>
 </html>

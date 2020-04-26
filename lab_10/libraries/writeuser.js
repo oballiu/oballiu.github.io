@@ -15,6 +15,3 @@ async function writeUser(username, dbSettings) {
   
 export default writeUser;
 
-//   import writeUser from "./libraries/writeuser";
-
-// 
