@@ -32,7 +32,7 @@ function processDataForFrontEnd(req, res) {
     .then((r) => r.json())
     .then((data) => {
       console.log(data);
-      res.send({ data: data }); // here's where we return data to the front end
+      res.json({ data: data }); // here's where we return data to the front end
     })
     .catch((err) => {
       console.log(err);
@@ -69,6 +69,23 @@ app
         console.log(err);
       });
     }
+  })
+  .put((req,res) => { //put request to api
+    console.log("put request acessed", req.body); //console log statement to the route
+    if (!req.body.name) {
+      console.log(req.body);
+      res.status("418").send("something went wrong, additionally i am a teapot");
+    } else {
+      writeUser(req.body.name, dbSettings)
+      .then((result) => {
+        console.log(result);
+        res.send("Done!No errors"); // simple mode
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
+
   });
 
 app.listen(port, () => {
