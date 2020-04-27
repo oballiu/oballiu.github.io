@@ -79,7 +79,7 @@ app
       writeUser(req.body.name, dbSettings)
       .then((result) => {
         console.log(result);
-        res.json("done :done:"); // simple mode
+        res.json({"done" : "no errors"}); // simple mode
       })
       .catch((err) => {
         console.log(err);
