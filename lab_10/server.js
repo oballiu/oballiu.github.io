@@ -32,7 +32,7 @@ function processDataForFrontEnd(req, res) {
     .then((r) => r.json())
     .then((data) => {
       console.log(data);
-      res.json({ data: data }); // here's where we return data to the front end
+      res.send({ data: data }); // here's where we return data to the front end
     })
     .catch((err) => {
       console.log(err);
@@ -79,7 +79,7 @@ app
       writeUser(req.body.name, dbSettings)
       .then((result) => {
         console.log(result);
-        res.send("Done!No errors"); // simple mode
+        res.json("done :done:"); // simple mode
       })
       .catch((err) => {
         console.log(err);
